@@ -1,1697 +1,853 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>momojihyoluv ♡</title>
 
-<title>@momojihyoluv ♡</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap');
 
-<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* =========================================
-   FONT
-========================================= */
+    html {
+      scroll-behavior: smooth;
+    }
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap');
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "DM Sans", sans-serif;
+      color: #48748f;
 
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255,255,255,.95) 0 3px, transparent 4px),
+        radial-gradient(circle at 85% 25%, rgba(255,255,255,.8) 0 2px, transparent 3px),
+        linear-gradient(135deg, #dff7ff 0%, #bcecff 45%, #e9faff 100%);
+    }
 
-/* =========================================
-   BASIC
-========================================= */
+    /* =========================
+       Y2K BACKGROUND
+    ========================== */
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    .background {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -2;
+    }
 
-html {
-    scroll-behavior: smooth;
-}
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(2px);
+      opacity: .55;
+      animation: floatBlob 8s ease-in-out infinite;
+    }
 
-body {
+    .blob.one {
+      width: 230px;
+      height: 230px;
+      background: rgba(255,255,255,.7);
+      top: -70px;
+      left: -80px;
+    }
 
-    min-height: 100vh;
+    .blob.two {
+      width: 280px;
+      height: 280px;
+      background: rgba(137,220,255,.35);
+      right: -100px;
+      bottom: 80px;
+      animation-delay: -3s;
+    }
 
-    font-family: 'DM Sans', sans-serif;
+    .blob.three {
+      width: 150px;
+      height: 150px;
+      background: rgba(255,255,255,.55);
+      right: 15%;
+      top: 35%;
+      animation-delay: -5s;
+    }
 
-    color: #397ca3;
+    @keyframes floatBlob {
+      0%,100% {
+        transform: translate(0,0) scale(1);
+      }
+      50% {
+        transform: translate(20px,-25px) scale(1.08);
+      }
+    }
 
-    overflow-x: hidden;
+    /* =========================
+       MAIN CARD
+    ========================== */
 
-    background:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(255,255,255,.95) 0 4%,
-            transparent 5%
-        ),
-        radial-gradient(
-            circle at 85% 20%,
-            rgba(255,255,255,.8) 0 3%,
-            transparent 4%
-        ),
+    .wrapper {
+      width: min(94%, 510px);
+      margin: 35px auto 45px;
+      position: relative;
+    }
+
+    .card {
+      position: relative;
+      padding: 34px 25px 28px;
+      border-radius: 38px;
+
+      background:
         linear-gradient(
-            135deg,
-            #bde8ff 0%,
-            #e7f8ff 48%,
-            #a9ddfa 100%
-        );
-}
-
-
-/* =========================================
-   BACKGROUND DOTS
-========================================= */
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    opacity: .5;
-
-    background-image:
-
-        radial-gradient(
-            circle,
-            white 1.5px,
-            transparent 1.5px
-        ),
-
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.8) 1px,
-            transparent 1px
+          145deg,
+          rgba(255,255,255,.86),
+          rgba(225,247,255,.74)
         );
 
-    background-size:
-        70px 70px,
-        110px 110px;
+      border: 2px solid rgba(255,255,255,.95);
 
-    background-position:
-        0 0,
-        35px 45px;
-}
+      box-shadow:
+        0 20px 60px rgba(67,160,196,.18),
+        inset 0 1px 0 rgba(255,255,255,.95);
 
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
 
-/* =========================================
-   MAIN CONTAINER
-========================================= */
-
-.container {
-
-    width: min(92%, 470px);
-
-    margin: auto;
-
-    padding:
-        45px 0
-        90px;
-
-    position: relative;
-
-    z-index: 5;
-}
-
-
-/* =========================================
-   PROFILE
-========================================= */
-
-.profile {
-
-    text-align: center;
-
-    animation:
-        fadeDown .9s ease both;
-}
-
-
-/* Profile photo */
-
-.profile-photo {
-
-    width: 116px;
-
-    height: 116px;
-
-    margin: auto;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    border-radius: 50%;
-
-    border:
-        5px solid
-        rgba(255,255,255,.95);
-
-    box-shadow:
-
-        0 0 0 4px
-        rgba(105,191,233,.28),
-
-        0 12px 35px
-        rgba(65,145,185,.25);
-
-    animation:
-        profileFloat
-        4s ease-in-out
-        infinite;
-}
-
-
-@keyframes profileFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(-1deg);
+      overflow: hidden;
     }
 
-    50% {
-
-        transform:
-            translateY(-7px)
-            rotate(1deg);
-    }
-}
-
-
-/* Username */
-
-.profile h1 {
-
-    margin-top: 17px;
-
-    font-family:
-        'Pacifico',
-        cursive;
-
-    font-size: 27px;
-
-    font-weight: 400;
-
-    color: #438eb7;
-
-    text-shadow:
-
-        2px 2px 0 white,
-
-        0 4px 15px
-        rgba(75,154,198,.2);
-}
-
-
-.profile p {
-
-    margin-top: 7px;
-
-    font-size: 13px;
-
-    letter-spacing: .3px;
-
-    color: #5599bd;
-}
-
-
-/* =========================================
-   Y2K BADGE
-========================================= */
-
-.y2k-badge {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 6px;
-
-    margin-top: 13px;
-
-    padding:
-        6px 13px;
-
-    border-radius: 999px;
-
-    background:
-        rgba(255,255,255,.65);
-
-    border:
-        1px solid
-        rgba(255,255,255,.9);
-
-    box-shadow:
-
-        inset 0 1px 0 white,
-
-        0 5px 18px
-        rgba(74,150,190,.12);
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.3px;
-
-    text-transform: uppercase;
-}
-
-
-/* =========================================
-   LINK SECTION
-========================================= */
-
-.links {
-
-    margin-top: 29px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 14px;
-}
-
-
-/* =========================================
-   LINK CARD
-========================================= */
-
-.link-card {
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    min-height: 65px;
-
-    padding:
-        10px 17px;
-
-    text-decoration: none;
-
-    color: #397ca3;
-
-    border-radius: 20px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.9),
-            rgba(232,248,255,.68)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.95);
-
-    box-shadow:
-
-        0 8px 22px
-        rgba(71,145,180,.15),
-
-        inset 0 1px 0
-        rgba(255,255,255,1);
-
-    backdrop-filter:
-        blur(10px);
-
-    overflow: hidden;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
-}
-
-
-/* Shine */
-
-.link-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: -100%;
-
-    width: 60%;
-
-    height: 100%;
-
-    background:
-
-        linear-gradient(
-            100deg,
-            transparent,
-            rgba(255,255,255,.8),
-            transparent
-        );
-
-    transform:
-        skewX(-20deg);
-
-    transition:
-        .6s;
-}
-
-
-.link-card:hover::before {
-
-    left: 130%;
-}
-
-
-.link-card:hover {
-
-    transform:
-        translateY(-4px)
-        rotate(-.5deg);
-
-    box-shadow:
-
-        0 13px 28px
-        rgba(71,145,180,.22),
-
-        inset 0 1px 0 white;
-}
-
-
-.link-card:active {
-
-    transform:
-        scale(.97);
-}
-
-
-/* =========================================
-   LINK ICON
-========================================= */
-
-.icon {
-
-    width: 42px;
-
-    height: 42px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 14px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #ffffff,
-            #cceeff
-        );
-
-    border:
-        1px solid white;
-
-    box-shadow:
-
-        0 4px 10px
-        rgba(68,150,190,.13),
-
-        inset 0 1px 2px
-        white;
-
-    font-size: 20px;
-}
-
-
-/* =========================================
-   LINK TEXT
-========================================= */
-
-.link-text {
-
-    flex: 1;
-
-    text-align: center;
-
-    padding-right: 42px;
-}
-
-
-.link-title {
-
-    display: block;
-
-    font-size: 14px;
-
-    font-weight: 700;
-}
-
-
-.link-sub {
-
-    display: block;
-
-    margin-top: 2px;
-
-    font-size: 10px;
-
-    opacity: .65;
-}
-
-
-.arrow {
-
-    position: absolute;
-
-    right: 17px;
-
-    font-size: 17px;
-
-    transition:
-        transform .25s ease;
-}
-
-
-.link-card:hover .arrow {
-
-    transform:
-        translateX(4px);
-}
-
-
-/* =========================================
-   MUSIC PLAYER
-========================================= */
-
-.music-player {
-
-    margin-top: 22px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    padding:
-        11px 14px;
-
-    border-radius: 18px;
-
-    background:
-        rgba(255,255,255,.58);
-
-    border:
-        1px solid
-        rgba(255,255,255,.9);
-
-    box-shadow:
-
-        0 8px 20px
-        rgba(71,145,180,.12),
-
-        inset 0 1px 0 white;
-
-    backdrop-filter:
-        blur(10px);
-}
-
-
-/* =========================================
-   CD
-========================================= */
-
-.cd {
-
-    width: 40px;
-
-    height: 40px;
-
-    flex-shrink: 0;
-
-    border-radius: 50%;
-
-    background:
-
-        repeating-conic-gradient(
-            from 0deg,
-            #c9edff 0deg 10deg,
-            #ffffff 10deg 20deg
-        );
-
-    border:
-        2px solid white;
-
-    box-shadow:
-
-        0 3px 10px
-        rgba(75,150,190,.2);
-
-    position: relative;
-
-    animation:
-        spin 5s linear infinite;
-
-    animation-play-state:
-        paused;
-}
-
-
-.cd::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 10px;
-
-    height: 10px;
-
-    left: 50%;
-
-    top: 50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:
-        #8fd2f1;
-
-    border:
-        2px solid white;
-
-    border-radius: 50%;
-}
-
-
-.music-player.playing .cd {
-
-    animation-play-state:
-        running;
-}
-
-
-@keyframes spin {
-
-    to {
-
-        transform:
-            rotate(360deg);
-    }
-}
-
-
-/* =========================================
-   MUSIC TEXT
-========================================= */
-
-.music-info {
-
-    flex: 1;
-
-    min-width: 0;
-}
-
-
-.music-title {
-
-    font-size: 12px;
-
-    font-weight: 700;
-}
-
-
-.music-status {
-
-    margin-top: 2px;
-
-    font-size: 10px;
-
-    opacity: .65;
-}
-
-
-/* =========================================
-   MUSIC BUTTON
-========================================= */
-
-.music-btn {
-
-    width: 37px;
-
-    height: 37px;
-
-    flex-shrink: 0;
-
-    border: none;
-
-    border-radius: 50%;
-
-    cursor: pointer;
-
-    color:
-        #438eb7;
-
-    background:
-        white;
-
-    box-shadow:
-
-        0 4px 10px
-        rgba(71,145,180,.18);
-
-    font-size: 15px;
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
-
-.music-btn:hover {
-
-    transform:
-        scale(1.08);
-
-    box-shadow:
-
-        0 6px 15px
-        rgba(71,145,180,.25);
-}
-
-
-.music-btn:active {
-
-    transform:
-        scale(.92);
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-.footer {
-
-    margin-top: 28px;
-
-    text-align: center;
-
-    font-size: 10px;
-
-    letter-spacing: .7px;
-
-    color:
-        rgba(57,124,163,.7);
-}
-
-
-.footer .heart {
-
-    display: inline-block;
-
-    animation:
-        heartBeat
-        1.4s infinite;
-}
-
-
-@keyframes heartBeat {
-
-    0%,
-    100% {
-
-        transform:
-            scale(1);
+    /* glossy shine */
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 120px;
+      top: -70px;
+      right: -80px;
+      background: rgba(255,255,255,.6);
+      transform: rotate(-20deg);
+      border-radius: 50%;
+      filter: blur(5px);
     }
 
-    50% {
+    /* =========================
+       DECORATIONS
+    ========================== */
 
-        transform:
-            scale(1.25);
-    }
-}
-
-
-/* =========================================
-   FLOATING DECORATIONS
-========================================= */
-
-.decor {
-
-    position: fixed;
-
-    z-index: 2;
-
-    pointer-events: none;
-
-    color:
-        rgba(255,255,255,.95);
-
-    text-shadow:
-
-        0 2px 8px
-        rgba(55,145,190,.2);
-
-    animation:
-        decorFloat
-        4s ease-in-out
-        infinite;
-}
-
-
-.star1 {
-
-    top: 12%;
-
-    left: 8%;
-
-    font-size: 23px;
-}
-
-
-.star2 {
-
-    top: 23%;
-
-    right: 7%;
-
-    font-size: 18px;
-
-    animation-delay:
-        1s;
-}
-
-
-.star3 {
-
-    bottom: 15%;
-
-    left: 7%;
-
-    font-size: 17px;
-
-    animation-delay:
-        2s;
-}
-
-
-.star4 {
-
-    bottom: 27%;
-
-    right: 8%;
-
-    font-size: 26px;
-
-    animation-delay:
-        .5s;
-}
-
-
-@keyframes decorFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(0deg);
+    .sticker {
+      position: absolute;
+      z-index: 5;
+      user-select: none;
     }
 
-    50% {
-
-        transform:
-            translateY(-12px)
-            rotate(10deg);
-    }
-}
-
-
-/* =========================================
-   BUBBLES
-========================================= */
-
-.bubble {
-
-    position: fixed;
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,.35);
-
-    border:
-        1px solid
-        rgba(255,255,255,.65);
-
-    backdrop-filter:
-        blur(2px);
-
-    pointer-events: none;
-
-    animation:
-        floatBubble
-        linear infinite;
-
-    z-index: 1;
-}
-
-
-.b1 {
-
-    width: 70px;
-
-    height: 70px;
-
-    left: 4%;
-
-    bottom: -100px;
-
-    animation-duration:
-        12s;
-}
-
-
-.b2 {
-
-    width: 35px;
-
-    height: 35px;
-
-    left: 22%;
-
-    bottom: -70px;
-
-    animation-duration:
-        9s;
-
-    animation-delay:
-        2s;
-}
-
-
-.b3 {
-
-    width: 90px;
-
-    height: 90px;
-
-    right: 8%;
-
-    bottom: -120px;
-
-    animation-duration:
-        14s;
-
-    animation-delay:
-        1s;
-}
-
-
-.b4 {
-
-    width: 25px;
-
-    height: 25px;
-
-    right: 28%;
-
-    bottom: -50px;
-
-    animation-duration:
-        8s;
-
-    animation-delay:
-        4s;
-}
-
-
-@keyframes floatBubble {
-
-    0% {
-
-        transform:
-            translateY(0)
-            scale(.8);
-
-        opacity: 0;
+    .sticker.star {
+      font-size: 27px;
+      color: white;
+      text-shadow:
+        0 0 5px #73c9ee,
+        0 0 15px #73c9ee;
+      animation: twinkle 2s infinite ease-in-out;
     }
 
-    15% {
-
-        opacity: .8;
+    .sticker.heart {
+      font-size: 24px;
+      animation: heartFloat 3s infinite ease-in-out;
     }
 
-    100% {
-
-        transform:
-            translateY(-115vh)
-            scale(1.2);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================
-   ENTRANCE ANIMATION
-========================================= */
-
-@keyframes fadeDown {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(-18px);
+    .s1 {
+      top: 23px;
+      left: 18px;
     }
 
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-.link-card:nth-child(1) {
-
-    animation:
-        fadeUp .6s .15s both;
-}
-
-
-.link-card:nth-child(2) {
-
-    animation:
-        fadeUp .6s .25s both;
-}
-
-
-.link-card:nth-child(3) {
-
-    animation:
-        fadeUp .6s .35s both;
-}
-
-
-.link-card:nth-child(4) {
-
-    animation:
-        fadeUp .6s .45s both;
-}
-
-
-@keyframes fadeUp {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(15px);
+    .s2 {
+      top: 115px;
+      right: 17px;
+      animation-delay: .6s;
     }
 
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-    }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 500px) {
-
-    .container {
-
-        width: 90%;
-
-        padding-top: 32px;
+    .s3 {
+      top: 270px;
+      left: 8px;
+      animation-delay: 1s;
     }
 
-
-    .profile-photo {
-
-        width: 105px;
-
-        height: 105px;
+    .s4 {
+      bottom: 135px;
+      right: 8px;
+      animation-delay: 1.4s;
     }
 
-
-    .profile h1 {
-
-        font-size: 25px;
-    }
-
-
-    .link-card {
-
-        min-height: 62px;
-
-        border-radius: 18px;
-    }
-
-
-    .decor {
-
+    @keyframes twinkle {
+      0%,100% {
+        transform: scale(.85) rotate(-8deg);
         opacity: .65;
+      }
+      50% {
+        transform: scale(1.15) rotate(10deg);
+        opacity: 1;
+      }
     }
-}
 
-</style>
+    @keyframes heartFloat {
+      0%,100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(8deg);
+      }
+    }
 
+    /* =========================
+       PROFILE
+    ========================== */
+
+    .profile {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .profile-picture {
+      width: 118px;
+      height: 118px;
+      margin: 0 auto 15px;
+      padding: 5px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(145deg, #ffffff, #b7eaff);
+
+      box-shadow:
+        0 8px 25px rgba(76,166,205,.28),
+        0 0 0 4px rgba(255,255,255,.65);
+
+      animation: profileFloat 4s ease-in-out infinite;
+    }
+
+    .profile-picture img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    @keyframes profileFloat {
+      0%,100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-6px) rotate(1deg);
+      }
+    }
+
+    .username {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: #4b83a2;
+      text-shadow: 1px 2px 0 rgba(255,255,255,.9);
+    }
+
+    .sparkle-name {
+      font-size: 18px;
+      vertical-align: middle;
+    }
+
+    .bio {
+      margin: 9px auto 18px;
+      max-width: 330px;
+      line-height: 1.55;
+      font-size: 13px;
+      color: #6792a8;
+    }
+
+    .tiny-links {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 23px;
+    }
+
+    .tiny-pill {
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+
+      background: rgba(255,255,255,.65);
+      border: 1px solid rgba(255,255,255,.9);
+
+      box-shadow: 0 4px 12px rgba(79,160,194,.1);
+    }
+
+    /* =========================
+       LINKS
+    ========================== */
+
+    .links {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .link {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      min-height: 68px;
+      padding: 10px 15px;
+
+      text-decoration: none;
+      color: #4d7f99;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255,255,255,.9),
+          rgba(235,249,255,.72)
+        );
+
+      border: 1.5px solid rgba(255,255,255,.95);
+
+      box-shadow:
+        0 8px 18px rgba(64,149,190,.11),
+        inset 0 1px 0 white;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+    }
+
+    .link:hover {
+      transform: translateY(-4px) scale(1.015);
+      box-shadow:
+        0 13px 25px rgba(64,149,190,.2),
+        0 0 20px rgba(154,227,255,.35);
+      background:
+        linear-gradient(
+          135deg,
+          #ffffff,
+          #dff7ff
+        );
+    }
+
+    .link:active {
+      transform: scale(.98);
+    }
+
+    .link-icon {
+      width: 43px;
+      height: 43px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-right: 13px;
+
+      border-radius: 15px;
+
+      background:
+        linear-gradient(145deg, #dff7ff, #ffffff);
+
+      box-shadow:
+        inset 0 1px 3px rgba(255,255,255,.9),
+        0 4px 10px rgba(78,162,199,.12);
+
+      font-size: 21px;
+      flex-shrink: 0;
+    }
+
+    .link-text {
+      flex: 1;
+    }
+
+    .link-title {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .link-subtitle {
+      display: block;
+      font-size: 10px;
+      color: #86aabd;
+    }
+
+    .arrow {
+      font-size: 20px;
+      opacity: .55;
+      transition: transform .25s ease;
+    }
+
+    .link:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* special link */
+
+    .special {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(196,239,255,.95),
+          rgba(255,255,255,.95)
+        );
+    }
+
+    .special::after {
+      content: "✦";
+      position: absolute;
+      top: 7px;
+      right: 13px;
+      font-size: 11px;
+      color: #69bce2;
+      animation: twinkle 1.7s infinite;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    .footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      margin-top: 25px;
+      color: #79a5b8;
+      font-size: 10px;
+      letter-spacing: .4px;
+    }
+
+    .footer span {
+      color: #68b9dd;
+    }
+
+    /* =========================
+       FLOATING SPARKLES
+    ========================== */
+
+    .sparkles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .sparkle {
+      position: absolute;
+      color: white;
+      font-size: 12px;
+      opacity: 0;
+      animation: sparkleMove linear infinite;
+      text-shadow: 0 0 8px #75c9ed;
+    }
+
+    @keyframes sparkleMove {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(.5) rotate(0deg);
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: .8;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1.2) rotate(180deg);
+      }
+    }
+
+    /* =========================
+       MUSIC-STYLE MINI DECOR
+    ========================== */
+
+    .music-note {
+      position: absolute;
+      bottom: 25px;
+      left: 23px;
+      font-size: 17px;
+      opacity: .55;
+      animation: noteFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes noteFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-9px);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 480px) {
+
+      .wrapper {
+        width: 94%;
+        margin-top: 20px;
+      }
+
+      .card {
+        padding: 29px 18px 25px;
+        border-radius: 31px;
+      }
+
+      .profile-picture {
+        width: 105px;
+        height: 105px;
+      }
+
+      .username {
+        font-size: 27px;
+      }
+
+      .link {
+        min-height: 64px;
+        border-radius: 19px;
+      }
+
+      .link-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 11px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- BACKGROUND -->
+  <div class="background">
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+    <div class="blob three"></div>
+  </div>
 
-<!-- ======================================
-     FLOATING BUBBLES
-====================================== -->
+  <!-- FLOATING SPARKLES -->
+  <div class="sparkles" id="sparkles"></div>
 
-<div class="bubble b1"></div>
-<div class="bubble b2"></div>
-<div class="bubble b3"></div>
-<div class="bubble b4"></div>
+  <main class="wrapper">
 
+    <section class="card">
 
-<!-- ======================================
-     Y2K STARS
-====================================== -->
+      <!-- Y2K DECORATIONS -->
+      <div class="sticker star s1">✦</div>
+      <div class="sticker heart s2">♡</div>
+      <div class="sticker star s3">✧</div>
+      <div class="sticker heart s4">♡</div>
 
-<div class="decor star1">✦</div>
-<div class="decor star2">☆</div>
-<div class="decor star3">✧</div>
-<div class="decor star4">⋆</div>
+      <!-- PROFILE -->
+      <div class="profile">
 
+        <div class="profile-picture">
 
-<main class="container">
-
-
-<!-- ======================================
-     PROFILE
-====================================== -->
-
-<section class="profile">
-
-
-    <!-- FOTO PROFIL DARI HALAMAN LAMA -->
-
-    <img
-        class="profile-photo"
-
-        src="https://images.msha.ke/397970c0-8563-43e6-b850-d47868ac3e78?auto=format%2Ccompress&cs=tinysrgb&q=30&w=828"
-
-        alt="@momojihyoluv"
-    >
-
-
-    <h1>
-        @momojihyoluv
-    </h1>
-
-
-    <p>
-        ♡ little space for my twice things ♡
-    </p>
-
-
-    <div class="y2k-badge">
-
-        🫧 y2k baby blue diary ✦
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ======================================
-     LINKS
-====================================== -->
-
-<section class="links">
-
-
-    <!-- XIAOHONGSHU -->
-
-    <a
-        class="link-card"
-
-        href="https://xhslink.cn/m/57QXzsihfD6"
-
-        target="_blank"
-
-        rel="noopener noreferrer"
-    >
-
-        <div class="icon">
-            📕
-        </div>
-
-
-        <div class="link-text">
-
-            <span class="link-title">
-                Xiaohongshu / Rednote ♡
-            </span>
-
-            <span class="link-sub">
-                little rednote diary
-            </span>
+          <!-- FOTO PROFIL DARI HALAMAN MSHA.KE SEBELUMNYA -->
+          <img
+            src="https://images.msha.ke/397970c0-8563-43e6-b850-d47868ac3e78?auto=format%2Ccompress&cs=tinysrgb&q=30&w=828"
+            alt="momojihyoluv profile"
+          >
 
         </div>
 
+        <h1 class="username">
+          momojihyoluv
+          <span class="sparkle-name">✧</span>
+        </h1>
 
-        <span class="arrow">
-            ♡
-        </span>
+        <p class="bio">
+          ˚₊‧꒰ა ♡ ໒꒱ ‧₊˚<br>
+          little corner of my TWICE world 🩵<br>
+          random things, perintilan &amp; more
+        </p>
 
-    </a>
-
-
-
-    <!-- TWITTER -->
-
-    <a
-        class="link-card"
-
-        href="https://x.com/momojihyoluv"
-
-        target="_blank"
-
-        rel="noopener noreferrer"
-    >
-
-        <div class="icon">
-            𝕏
+        <div class="tiny-links">
+          <span class="tiny-pill">TWICE ♡</span>
+          <span class="tiny-pill">MOMO</span>
+          <span class="tiny-pill">JIHYO</span>
+          <span class="tiny-pill">ONCE</span>
         </div>
 
-
-        <div class="link-text">
-
-            <span class="link-title">
-                Twitter ♡
-            </span>
-
-            <span class="link-sub">
-                random thoughts & updates
-            </span>
-
-        </div>
+      </div>
 
 
-        <span class="arrow">
-            ♡
-        </span>
+      <!-- LINKS -->
+      <div class="links">
 
-    </a>
-
-
-
-    <!-- TIKTOK -->
-
-    <a
-        class="link-card"
-
-        href="https://www.tiktok.com/@momojihyoluv?_r=1&_t=ZS-9A7xAp7otVe"
-
-        target="_blank"
-
-        rel="noopener noreferrer"
-    >
-
-        <div class="icon">
-            ♪
-        </div>
-
-
-        <div class="link-text">
-
-            <span class="link-title">
-                TikTok ♡
-            </span>
-
-            <span class="link-sub">
-                videos & little moments
-            </span>
-
-        </div>
-
-
-        <span class="arrow">
-            ♡
-        </span>
-
-    </a>
-
-
-
-    <!-- TELEGRAM -->
-
-    <a
-        class="link-card"
-
-        href="https://t.me/perintilantwice"
-
-        target="_blank"
-
-        rel="noopener noreferrer"
-    >
-
-        <div class="icon">
-            🛍️
-        </div>
-
-
-        <div class="link-text">
-
-            <span class="link-title">
-                Racun Perintilan TWICE ♡
-            </span>
-
-            <span class="link-sub">
-                twice goodies & perintilan
-            </span>
-
-        </div>
-
-
-        <span class="arrow">
-            ♡
-        </span>
-
-    </a>
-
-
-</section>
-
-
-
-<!-- ======================================
-     MUSIC PLAYER
-====================================== -->
-
-<section
-    class="music-player"
-    id="musicPlayer"
->
-
-
-    <!-- CD -->
-
-    <div class="cd"></div>
-
-
-    <!-- MUSIC INFORMATION -->
-
-    <div class="music-info">
-
-        <div class="music-title">
-            TWICE ♡
-        </div>
-
-        <div
-            class="music-status"
-            id="musicStatus"
+        <!-- XHS -->
+        <a
+          class="link"
+          href="https://xhslink.cn/m/57QXzsihfD6"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-            tap ▶ to play ♡
-        </div>
 
-    </div>
+          <div class="link-icon">📕</div>
 
+          <div class="link-text">
+            <span class="link-title">
+              Xiaohongshu / Rednote ♡
+            </span>
 
-    <!-- PLAY / PAUSE -->
+            <span class="link-subtitle">
+              come find me on rednote
+            </span>
+          </div>
 
-    <button
-        class="music-btn"
-        id="musicButton"
-        type="button"
-        aria-label="Play or pause music"
-    >
+          <div class="arrow">›</div>
 
-        ▶
+        </a>
 
-    </button>
 
+        <!-- TWITTER -->
+        <a
+          class="link"
+          href="https://x.com/momojihyoluv"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-</section>
+          <div class="link-icon">𝕏</div>
 
+          <div class="link-text">
+            <span class="link-title">
+              Twitter ♡
+            </span>
 
+            <span class="link-subtitle">
+              daily thoughts &amp; updates
+            </span>
+          </div>
 
-<!-- ======================================
-     FOOTER
-====================================== -->
+          <div class="arrow">›</div>
 
-<div class="footer">
+        </a>
 
-    made with baby blue love
 
-    <span class="heart">
-        ♡
-    </span>
+        <!-- TIKTOK -->
+        <a
+          class="link"
+          href="https://www.tiktok.com/@momojihyoluv?_r=1&_t=ZS-9A7xAp7otVe"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-</div>
+          <div class="link-icon">♪</div>
 
+          <div class="link-text">
+            <span class="link-title">
+              TikTok ♡
+            </span>
 
-</main>
+            <span class="link-subtitle">
+              videos, edits &amp; random stuff
+            </span>
+          </div>
 
+          <div class="arrow">›</div>
 
+        </a>
 
-<!-- ======================================
-     HIDDEN YOUTUBE PLAYER
-====================================== -->
 
-<div
-    id="youtubePlayer"
+        <!-- TELEGRAM -->
+        <a
+          class="link special"
+          href="https://t.me/perintilantwice"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-    style="
-        position:fixed;
-        width:1px;
-        height:1px;
-        left:-10px;
-        bottom:-10px;
-        opacity:0;
-        pointer-events:none;
-    "
->
-</div>
+          <div class="link-icon">🛍️</div>
 
+          <div class="link-text">
+            <span class="link-title">
+              Racun Perintilan TWICE ♡
+            </span>
 
+            <span class="link-subtitle">
+              TWICE goodies &amp; perintilan
+            </span>
+          </div>
 
-<!-- ======================================
-     YOUTUBE API
-====================================== -->
+          <div class="arrow">›</div>
 
-<script src="https://www.youtube.com/iframe_api"></script>
+        </a>
 
+      </div>
 
-<script>
 
+      <div class="music-note">♪ ♡ ♪</div>
 
-/* =========================================
-   VARIABLES
-========================================= */
 
-let player = null;
+      <!-- FOOTER -->
+      <div class="footer">
+        made with <span>♡</span> for fellow ONCE
+      </div>
 
-let playerReady = false;
+    </section>
 
-let isPlaying = false;
+  </main>
 
 
-const musicButton =
-    document.getElementById(
-        "musicButton"
-    );
+  <script>
 
+    /* =========================
+       RANDOM FLOATING SPARKLES
+    ========================== */
 
-const musicStatus =
-    document.getElementById(
-        "musicStatus"
-    );
+    const sparkleContainer =
+      document.getElementById("sparkles");
 
+    const symbols = [
+      "✦",
+      "✧",
+      "♡",
+      "⋆",
+      "｡",
+      "✩"
+    ];
 
-const musicPlayer =
-    document.getElementById(
-        "musicPlayer"
-    );
+    function createSparkle() {
 
+      const sparkle =
+        document.createElement("div");
 
+      sparkle.classList.add("sparkle");
 
-/* =========================================
-   CREATE YOUTUBE PLAYER
-========================================= */
+      sparkle.innerHTML =
+        symbols[Math.floor(Math.random() * symbols.length)];
 
-function onYouTubeIframeAPIReady() {
+      sparkle.style.left =
+        Math.random() * 100 + "vw";
 
+      sparkle.style.top =
+        (55 + Math.random() * 45) + "vh";
 
-    player = new YT.Player(
-        "youtubePlayer",
-        {
+      sparkle.style.fontSize =
+        (8 + Math.random() * 12) + "px";
 
-            width: "1",
+      sparkle.style.animationDuration =
+        (3 + Math.random() * 5) + "s";
 
-            height: "1",
+      sparkle.style.animationDelay =
+        Math.random() * 2 + "s";
 
-            videoId:
-                "UXn0HgvCpdM",
+      sparkleContainer.appendChild(sparkle);
 
-
-            playerVars: {
-
-                /*
-                   Mulai dari detik 42
-                */
-
-                start: 42,
-
-                /*
-                   Mobile compatibility
-                */
-
-                playsinline: 1,
-
-                /*
-                   Tidak menampilkan
-                   kontrol YouTube
-                */
-
-                controls: 0,
-
-                /*
-                   Tidak menampilkan
-                   rekomendasi video lain
-                */
-
-                rel: 0
-
-            },
-
-
-            events: {
-
-
-                /* =========================
-                   PLAYER READY
-                ========================= */
-
-                onReady:
-                    function(event) {
-
-
-                        playerReady =
-                            true;
-
-
-                        /*
-                           Volume 15%
-                        */
-
-                        event.target
-                            .setVolume(15);
-
-
-                        musicStatus.innerHTML =
-                            "tap ▶ to play ♡";
-
-                    },
-
-
-                /* =========================
-                   STATE CHANGE
-                ========================= */
-
-                onStateChange:
-                    function(event) {
-
-
-                        /*
-                           PLAYING
-                        */
-
-                        if (
-                            event.data ===
-                            YT.PlayerState.PLAYING
-                        ) {
-
-
-                            isPlaying =
-                                true;
-
-
-                            musicButton.innerHTML =
-                                "Ⅱ";
-
-
-                            musicStatus.innerHTML =
-                                "now playing ♡";
-
-
-                            musicPlayer
-                                .classList
-                                .add("playing");
-
-                        }
-
-
-
-                        /*
-                           PAUSED
-                        */
-
-                        if (
-                            event.data ===
-                            YT.PlayerState.PAUSED
-                        ) {
-
-
-                            isPlaying =
-                                false;
-
-
-                            musicButton.innerHTML =
-                                "▶";
-
-
-                            musicStatus.innerHTML =
-                                "music paused ♡";
-
-
-                            musicPlayer
-                                .classList
-                                .remove("playing");
-
-                        }
-
-
-
-                        /*
-                           ENDED
-                        */
-
-                        if (
-                            event.data ===
-                            YT.PlayerState.ENDED
-                        ) {
-
-
-                            isPlaying =
-                                false;
-
-
-                            musicButton.innerHTML =
-                                "▶";
-
-
-                            musicStatus.innerHTML =
-                                "tap ▶ to replay ♡";
-
-
-                            musicPlayer
-                                .classList
-                                .remove("playing");
-
-                        }
-
-                    }
-
-        }
-
-    );
-
-}
-
-
-
-/* =========================================
-   MUSIC BUTTON
-========================================= */
-
-musicButton.addEventListener(
-    "click",
-    function() {
-
-
-        /*
-           YouTube belum selesai loading
-        */
-
-        if (
-            !player ||
-            !playerReady
-        ) {
-
-            musicStatus.innerHTML =
-                "loading music... ♡";
-
-            return;
-
-        }
-
-
-
-        /*
-           JIKA SEDANG PLAY
-           → PAUSE
-        */
-
-        if (isPlaying) {
-
-            player.pauseVideo();
-
-            return;
-
-        }
-
-
-
-        /*
-           JIKA PAUSE
-           → PLAY
-        */
-
-        player.setVolume(15);
-
-        player.playVideo();
-
+      setTimeout(() => {
+        sparkle.remove();
+      }, 9000);
     }
-);
 
-</script>
+    setInterval(createSparkle, 650);
 
+
+    /* =========================
+       CLICK SPARKLE EFFECT
+    ========================== */
+
+    document.addEventListener("click", function(e) {
+
+      for (let i = 0; i < 5; i++) {
+
+        const sparkle =
+          document.createElement("span");
+
+        sparkle.innerHTML =
+          symbols[Math.floor(Math.random() * symbols.length)];
+
+        sparkle.style.position = "fixed";
+        sparkle.style.left = e.clientX + "px";
+        sparkle.style.top = e.clientY + "px";
+        sparkle.style.pointerEvents = "none";
+        sparkle.style.zIndex = "9999";
+        sparkle.style.color = "#ffffff";
+        sparkle.style.fontSize = "14px";
+        sparkle.style.textShadow =
+          "0 0 8px #65c6ec";
+
+        const x =
+          (Math.random() - .5) * 70;
+
+        const y =
+          (Math.random() - .5) * 70;
+
+        sparkle.animate(
+          [
+            {
+              transform: "translate(0,0) scale(.5)",
+              opacity: 1
+            },
+            {
+              transform:
+                `translate(${x}px, ${y}px) scale(1.3)`,
+              opacity: 0
+            }
+          ],
+          {
+            duration: 650,
+            easing: "ease-out"
+          }
+        );
+
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+          sparkle.remove();
+        }, 700);
+      }
+
+    });
+
+
+    /* =========================
+       LINK OPEN ANIMATION
+    ========================== */
+
+    document.querySelectorAll(".link")
+      .forEach(link => {
+
+        link.addEventListener("click", function() {
+
+          this.style.transform =
+            "scale(.97)";
+
+          setTimeout(() => {
+            this.style.transform = "";
+          }, 180);
+
+        });
+
+      });
+
+  </script>
 
 </body>
 </html>
