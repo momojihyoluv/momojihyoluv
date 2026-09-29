@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>@momojihyoluv ♡</title>
+
+<style>
+
+/* =========================================
+   FONT
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap');
+
+
+/* =========================================
+   BASIC
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family: 'DM Sans', sans-serif;
+
+    color: #397ca3;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255,255,255,.95) 0 4%,
+            transparent 5%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255,255,255,.8) 0 3%,
+            transparent 4%
+        ),
+        linear-gradient(
+            135deg,
+            #bde8ff 0%,
+            #e7f8ff 48%,
+            #a9ddfa 100%
+        );
+}
+
+
+/* =========================================
+   BACKGROUND DOTS
+========================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .5;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            white 1.5px,
+            transparent 1.5px
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.8) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        70px 70px,
+        110px 110px;
+
+    background-position:
+        0 0,
+        35px 45px;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+
+    width: min(92%, 470px);
+
+    margin: auto;
+
+    padding:
+        45px 0
+        90px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile {
+
+    text-align: center;
+
+    animation:
+        fadeDown .9s ease both;
+}
+
+
+/* Profile photo */
+
+.profile-photo {
+
+    width: 116px;
+
+    height: 116px;
+
+    margin: auto;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 50%;
+
+    border:
+        5px solid
+        rgba(255,255,255,.95);
+
+    box-shadow:
+
+        0 0 0 4px
+        rgba(105,191,233,.28),
+
+        0 12px 35px
+        rgba(65,145,185,.25);
+
+    animation:
+        profileFloat
+        4s ease-in-out
+        infinite;
+}
+
+
+@keyframes profileFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-1deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px)
+            rotate(1deg);
+    }
+}
+
+
+/* Username */
+
+.profile h1 {
+
+    margin-top: 17px;
+
+    font-family:
+        'Pacifico',
+        cursive;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    color: #438eb7;
+
+    text-shadow:
+
+        2px 2px 0 white,
+
+        0 4px 15px
+        rgba(75,154,198,.2);
+}
+
+
+.profile p {
+
+    margin-top: 7px;
+
+    font-size: 13px;
+
+    letter-spacing: .3px;
+
+    color: #5599bd;
+}
+
+
+/* =========================================
+   Y2K BADGE
+========================================= */
+
+.y2k-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 13px;
+
+    padding:
+        6px 13px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    border:
+        1px solid
+        rgba(255,255,255,.9);
+
+    box-shadow:
+
+        inset 0 1px 0 white,
+
+        0 5px 18px
+        rgba(74,150,190,.12);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   LINK SECTION
+========================================= */
+
+.links {
+
+    margin-top: 29px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   LINK CARD
+========================================= */
+
+.link-card {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 65px;
+
+    padding:
+        10px 17px;
+
+    text-decoration: none;
+
+    color: #397ca3;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.9),
+            rgba(232,248,255,.68)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.95);
+
+    box-shadow:
+
+        0 8px 22px
+        rgba(71,145,180,.15),
+
+        inset 0 1px 0
+        rgba(255,255,255,1);
+
+    backdrop-filter:
+        blur(10px);
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* Shine */
+
+.link-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 60%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            100deg,
+            transparent,
+            rgba(255,255,255,.8),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        .6s;
+}
+
+
+.link-card:hover::before {
+
+    left: 130%;
+}
+
+
+.link-card:hover {
+
+    transform:
+        translateY(-4px)
+        rotate(-.5deg);
+
+    box-shadow:
+
+        0 13px 28px
+        rgba(71,145,180,.22),
+
+        inset 0 1px 0 white;
+}
+
+
+.link-card:active {
+
+    transform:
+        scale(.97);
+}
+
+
+/* =========================================
+   LINK ICON
+========================================= */
+
+.icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #cceeff
+        );
+
+    border:
+        1px solid white;
+
+    box-shadow:
+
+        0 4px 10px
+        rgba(68,150,190,.13),
+
+        inset 0 1px 2px
+        white;
+
+    font-size: 20px;
+}
+
+
+/* =========================================
+   LINK TEXT
+========================================= */
+
+.link-text {
+
+    flex: 1;
+
+    text-align: center;
+
+    padding-right: 42px;
+}
+
+
+.link-title {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.link-sub {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 10px;
+
+    opacity: .65;
+}
+
+
+.arrow {
+
+    position: absolute;
+
+    right: 17px;
+
+    font-size: 17px;
+
+    transition:
+        transform .25s ease;
+}
+
+
+.link-card:hover .arrow {
+
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================
+   MUSIC PLAYER
+========================================= */
+
+.music-player {
+
+    margin-top: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        11px 14px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.58);
+
+    border:
+        1px solid
+        rgba(255,255,255,.9);
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(71,145,180,.12),
+
+        inset 0 1px 0 white;
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* =========================================
+   CD
+========================================= */
+
+.cd {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+
+        repeating-conic-gradient(
+            from 0deg,
+            #c9edff 0deg 10deg,
+            #ffffff 10deg 20deg
+        );
+
+    border:
+        2px solid white;
+
+    box-shadow:
+
+        0 3px 10px
+        rgba(75,150,190,.2);
+
+    position: relative;
+
+    animation:
+        spin 5s linear infinite;
+
+    animation-play-state:
+        paused;
+}
+
+
+.cd::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+
+    height: 10px;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        #8fd2f1;
+
+    border:
+        2px solid white;
+
+    border-radius: 50%;
+}
+
+
+.music-player.playing .cd {
+
+    animation-play-state:
+        running;
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   MUSIC TEXT
+========================================= */
+
+.music-info {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.music-title {
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+.music-status {
+
+    margin-top: 2px;
+
+    font-size: 10px;
+
+    opacity: .65;
+}
+
+
+/* =========================================
+   MUSIC BUTTON
+========================================= */
+
+.music-btn {
+
+    width: 37px;
+
+    height: 37px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    color:
+        #438eb7;
+
+    background:
+        white;
+
+    box-shadow:
+
+        0 4px 10px
+        rgba(71,145,180,.18);
+
+    font-size: 15px;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.music-btn:hover {
+
+    transform:
+        scale(1.08);
+
+    box-shadow:
+
+        0 6px 15px
+        rgba(71,145,180,.25);
+}
+
+
+.music-btn:active {
+
+    transform:
+        scale(.92);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    margin-top: 28px;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    letter-spacing: .7px;
+
+    color:
+        rgba(57,124,163,.7);
+}
+
+
+.footer .heart {
+
+    display: inline-block;
+
+    animation:
+        heartBeat
+        1.4s infinite;
+}
+
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+    }
+
+    50% {
+
+        transform:
+            scale(1.25);
+    }
+}
+
+
+/* =========================================
+   FLOATING DECORATIONS
+========================================= */
+
+.decor {
+
+    position: fixed;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    color:
+        rgba(255,255,255,.95);
+
+    text-shadow:
+
+        0 2px 8px
+        rgba(55,145,190,.2);
+
+    animation:
+        decorFloat
+        4s ease-in-out
+        infinite;
+}
+
+
+.star1 {
+
+    top: 12%;
+
+    left: 8%;
+
+    font-size: 23px;
+}
+
+
+.star2 {
+
+    top: 23%;
+
+    right: 7%;
+
+    font-size: 18px;
+
+    animation-delay:
+        1s;
+}
+
+
+.star3 {
+
+    bottom: 15%;
+
+    left: 7%;
+
+    font-size: 17px;
+
+    animation-delay:
+        2s;
+}
+
+
+.star4 {
+
+    bottom: 27%;
+
+    right: 8%;
+
+    font-size: 26px;
+
+    animation-delay:
+        .5s;
+}
+
+
+@keyframes decorFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px)
+            rotate(10deg);
+    }
+}
+
+
+/* =========================================
+   BUBBLES
+========================================= */
+
+.bubble {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.35);
+
+    border:
+        1px solid
+        rgba(255,255,255,.65);
+
+    backdrop-filter:
+        blur(2px);
+
+    pointer-events: none;
+
+    animation:
+        floatBubble
+        linear infinite;
+
+    z-index: 1;
+}
+
+
+.b1 {
+
+    width: 70px;
+
+    height: 70px;
+
+    left: 4%;
+
+    bottom: -100px;
+
+    animation-duration:
+        12s;
+}
+
+
+.b2 {
+
+    width: 35px;
+
+    height: 35px;
+
+    left: 22%;
+
+    bottom: -70px;
+
+    animation-duration:
+        9s;
+
+    animation-delay:
+        2s;
+}
+
+
+.b3 {
+
+    width: 90px;
+
+    height: 90px;
+
+    right: 8%;
+
+    bottom: -120px;
+
+    animation-duration:
+        14s;
+
+    animation-delay:
+        1s;
+}
+
+
+.b4 {
+
+    width: 25px;
+
+    height: 25px;
+
+    right: 28%;
+
+    bottom: -50px;
+
+    animation-duration:
+        8s;
+
+    animation-delay:
+        4s;
+}
+
+
+@keyframes floatBubble {
+
+    0% {
+
+        transform:
+            translateY(0)
+            scale(.8);
+
+        opacity: 0;
+    }
+
+    15% {
+
+        opacity: .8;
+    }
+
+    100% {
+
+        transform:
+            translateY(-115vh)
+            scale(1.2);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   ENTRANCE ANIMATION
+========================================= */
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-18px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+.link-card:nth-child(1) {
+
+    animation:
+        fadeUp .6s .15s both;
+}
+
+
+.link-card:nth-child(2) {
+
+    animation:
+        fadeUp .6s .25s both;
+}
+
+
+.link-card:nth-child(3) {
+
+    animation:
+        fadeUp .6s .35s both;
+}
+
+
+.link-card:nth-child(4) {
+
+    animation:
+        fadeUp .6s .45s both;
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .container {
+
+        width: 90%;
+
+        padding-top: 32px;
+    }
+
+
+    .profile-photo {
+
+        width: 105px;
+
+        height: 105px;
+    }
+
+
+    .profile h1 {
+
+        font-size: 25px;
+    }
+
+
+    .link-card {
+
+        min-height: 62px;
+
+        border-radius: 18px;
+    }
+
+
+    .decor {
+
+        opacity: .65;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================
+     FLOATING BUBBLES
+====================================== -->
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+<div class="bubble b4"></div>
+
+
+<!-- ======================================
+     Y2K STARS
+====================================== -->
+
+<div class="decor star1">✦</div>
+<div class="decor star2">☆</div>
+<div class="decor star3">✧</div>
+<div class="decor star4">⋆</div>
+
+
+<main class="container">
+
+
+<!-- ======================================
+     PROFILE
+====================================== -->
+
+<section class="profile">
+
+
+    <!-- FOTO PROFIL DARI HALAMAN LAMA -->
+
+    <img
+        class="profile-photo"
+
+        src="https://images.msha.ke/397970c0-8563-43e6-b850-d47868ac3e78?auto=format%2Ccompress&cs=tinysrgb&q=30&w=828"
+
+        alt="@momojihyoluv"
+    >
+
+
+    <h1>
+        @momojihyoluv
+    </h1>
+
+
+    <p>
+        ♡ little space for my twice things ♡
+    </p>
+
+
+    <div class="y2k-badge">
+
+        🫧 y2k baby blue diary ✦
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ======================================
+     LINKS
+====================================== -->
+
+<section class="links">
+
+
+    <!-- XIAOHONGSHU -->
+
+    <a
+        class="link-card"
+
+        href="https://xhslink.cn/m/57QXzsihfD6"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+    >
+
+        <div class="icon">
+            📕
+        </div>
+
+
+        <div class="link-text">
+
+            <span class="link-title">
+                Xiaohongshu / Rednote ♡
+            </span>
+
+            <span class="link-sub">
+                little rednote diary
+            </span>
+
+        </div>
+
+
+        <span class="arrow">
+            ♡
+        </span>
+
+    </a>
+
+
+
+    <!-- TWITTER -->
+
+    <a
+        class="link-card"
+
+        href="https://x.com/momojihyoluv"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+    >
+
+        <div class="icon">
+            𝕏
+        </div>
+
+
+        <div class="link-text">
+
+            <span class="link-title">
+                Twitter ♡
+            </span>
+
+            <span class="link-sub">
+                random thoughts & updates
+            </span>
+
+        </div>
+
+
+        <span class="arrow">
+            ♡
+        </span>
+
+    </a>
+
+
+
+    <!-- TIKTOK -->
+
+    <a
+        class="link-card"
+
+        href="https://www.tiktok.com/@momojihyoluv?_r=1&_t=ZS-9A7xAp7otVe"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+    >
+
+        <div class="icon">
+            ♪
+        </div>
+
+
+        <div class="link-text">
+
+            <span class="link-title">
+                TikTok ♡
+            </span>
+
+            <span class="link-sub">
+                videos & little moments
+            </span>
+
+        </div>
+
+
+        <span class="arrow">
+            ♡
+        </span>
+
+    </a>
+
+
+
+    <!-- TELEGRAM -->
+
+    <a
+        class="link-card"
+
+        href="https://t.me/perintilantwice"
+
+        target="_blank"
+
+        rel="noopener noreferrer"
+    >
+
+        <div class="icon">
+            🛍️
+        </div>
+
+
+        <div class="link-text">
+
+            <span class="link-title">
+                Racun Perintilan TWICE ♡
+            </span>
+
+            <span class="link-sub">
+                twice goodies & perintilan
+            </span>
+
+        </div>
+
+
+        <span class="arrow">
+            ♡
+        </span>
+
+    </a>
+
+
+</section>
+
+
+
+<!-- ======================================
+     MUSIC PLAYER
+====================================== -->
+
+<section
+    class="music-player"
+    id="musicPlayer"
+>
+
+
+    <!-- CD -->
+
+    <div class="cd"></div>
+
+
+    <!-- MUSIC INFORMATION -->
+
+    <div class="music-info">
+
+        <div class="music-title">
+            TWICE ♡
+        </div>
+
+        <div
+            class="music-status"
+            id="musicStatus"
+        >
+            tap ▶ to play ♡
+        </div>
+
+    </div>
+
+
+    <!-- PLAY / PAUSE -->
+
+    <button
+        class="music-btn"
+        id="musicButton"
+        type="button"
+        aria-label="Play or pause music"
+    >
+
+        ▶
+
+    </button>
+
+
+</section>
+
+
+
+<!-- ======================================
+     FOOTER
+====================================== -->
+
+<div class="footer">
+
+    made with baby blue love
+
+    <span class="heart">
+        ♡
+    </span>
+
+</div>
+
+
+</main>
+
+
+
+<!-- ======================================
+     HIDDEN YOUTUBE PLAYER
+====================================== -->
+
+<div
+    id="youtubePlayer"
+
+    style="
+        position:fixed;
+        width:1px;
+        height:1px;
+        left:-10px;
+        bottom:-10px;
+        opacity:0;
+        pointer-events:none;
+    "
+>
+</div>
+
+
+
+<!-- ======================================
+     YOUTUBE API
+====================================== -->
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+
+<script>
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+let player = null;
+
+let playerReady = false;
+
+let isPlaying = false;
+
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+
+const musicStatus =
+    document.getElementById(
+        "musicStatus"
+    );
+
+
+const musicPlayer =
+    document.getElementById(
+        "musicPlayer"
+    );
+
+
+
+/* =========================================
+   CREATE YOUTUBE PLAYER
+========================================= */
+
+function onYouTubeIframeAPIReady() {
+
+
+    player = new YT.Player(
+        "youtubePlayer",
+        {
+
+            width: "1",
+
+            height: "1",
+
+            videoId:
+                "UXn0HgvCpdM",
+
+
+            playerVars: {
+
+                /*
+                   Mulai dari detik 42
+                */
+
+                start: 42,
+
+                /*
+                   Mobile compatibility
+                */
+
+                playsinline: 1,
+
+                /*
+                   Tidak menampilkan
+                   kontrol YouTube
+                */
+
+                controls: 0,
+
+                /*
+                   Tidak menampilkan
+                   rekomendasi video lain
+                */
+
+                rel: 0
+
+            },
+
+
+            events: {
+
+
+                /* =========================
+                   PLAYER READY
+                ========================= */
+
+                onReady:
+                    function(event) {
+
+
+                        playerReady =
+                            true;
+
+
+                        /*
+                           Volume 15%
+                        */
+
+                        event.target
+                            .setVolume(15);
+
+
+                        musicStatus.innerHTML =
+                            "tap ▶ to play ♡";
+
+                    },
+
+
+                /* =========================
+                   STATE CHANGE
+                ========================= */
+
+                onStateChange:
+                    function(event) {
+
+
+                        /*
+                           PLAYING
+                        */
+
+                        if (
+                            event.data ===
+                            YT.PlayerState.PLAYING
+                        ) {
+
+
+                            isPlaying =
+                                true;
+
+
+                            musicButton.innerHTML =
+                                "Ⅱ";
+
+
+                            musicStatus.innerHTML =
+                                "now playing ♡";
+
+
+                            musicPlayer
+                                .classList
+                                .add("playing");
+
+                        }
+
+
+
+                        /*
+                           PAUSED
+                        */
+
+                        if (
+                            event.data ===
+                            YT.PlayerState.PAUSED
+                        ) {
+
+
+                            isPlaying =
+                                false;
+
+
+                            musicButton.innerHTML =
+                                "▶";
+
+
+                            musicStatus.innerHTML =
+                                "music paused ♡";
+
+
+                            musicPlayer
+                                .classList
+                                .remove("playing");
+
+                        }
+
+
+
+                        /*
+                           ENDED
+                        */
+
+                        if (
+                            event.data ===
+                            YT.PlayerState.ENDED
+                        ) {
+
+
+                            isPlaying =
+                                false;
+
+
+                            musicButton.innerHTML =
+                                "▶";
+
+
+                            musicStatus.innerHTML =
+                                "tap ▶ to replay ♡";
+
+
+                            musicPlayer
+                                .classList
+                                .remove("playing");
+
+                        }
+
+                    }
+
+        }
+
+    );
+
+}
+
+
+
+/* =========================================
+   MUSIC BUTTON
+========================================= */
+
+musicButton.addEventListener(
+    "click",
+    function() {
+
+
+        /*
+           YouTube belum selesai loading
+        */
+
+        if (
+            !player ||
+            !playerReady
+        ) {
+
+            musicStatus.innerHTML =
+                "loading music... ♡";
+
+            return;
+
+        }
+
+
+
+        /*
+           JIKA SEDANG PLAY
+           → PAUSE
+        */
+
+        if (isPlaying) {
+
+            player.pauseVideo();
+
+            return;
+
+        }
+
+
+
+        /*
+           JIKA PAUSE
+           → PLAY
+        */
+
+        player.setVolume(15);
+
+        player.playVideo();
+
+    }
+);
+
+</script>
+
+
+</body>
+</html>
